@@ -17,7 +17,7 @@ public class Broker {
 
                 navn=cells[1];
                 int deaths = Integer.parseInt(cells[j]);
-                p.println( deaths);
+                p.println( navn);
             }
         }
     }

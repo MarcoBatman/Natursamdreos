@@ -18,10 +18,14 @@ public class Main extends PApplet {
         super.setup();
         broker.p = this;
     broker.loadData();
+        for(int i =0;i<broker.dataList.size();i++){
+            println(broker.dataList.get(i).name + " " + broker.dataList.get(i).year + " " +broker.dataList.get(i).deaths);
+        }
     }
 
     @Override
     public void draw() {
+
 
     }
 }

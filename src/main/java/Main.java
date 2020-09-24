@@ -30,12 +30,18 @@ public class Main extends PApplet {
     public void draw() {
         clear();
         box.draw();
-
+        println(box.input);
 
     }
 
     @Override
     public void mousePressed() {
         box.clicked();
+
+    }
+
+    @Override
+    public void keyTyped() {
+        box.writing(key);
     }
 }

@@ -8,13 +8,16 @@ public class Main extends PApplet {
         PApplet.main("Main");
     }
     Broker broker = new Broker();
+    Box box = new Box(this,100,100,400,400);
     @Override
     public void settings() {
         super.settings();
+        size(600,600);
     }
 
     @Override
     public void setup() {
+
         super.setup();
         broker.p = this;
     broker.loadData();
@@ -25,7 +28,14 @@ public class Main extends PApplet {
 
     @Override
     public void draw() {
+        clear();
+        box.draw();
 
 
+    }
+
+    @Override
+    public void mousePressed() {
+        box.clicked();
     }
 }

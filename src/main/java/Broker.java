@@ -25,7 +25,7 @@ public class Broker {
 
         }
     }
-    public int getData(int year, String land){
+ /*   public int getData(int year, String land){
         int d = 0;
         for(int i = 0; i < dataList.size(); i++){
             if( land == dataList.get(i).name && year == dataList.get(i).year){
@@ -37,5 +37,5 @@ public class Broker {
         }
         return d;
 
-    }
+    }*/
 }

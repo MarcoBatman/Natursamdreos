@@ -19,23 +19,20 @@ public class Broker {
                 ;
                 name = cells[1];
                 String deaths = cells[j];
-                dataList.add(new Data(p,name,Integer.parseInt(header[j]),deaths));
+                dataList.add(new Data(p,name,header[j],deaths));
                 p.println(header[j]);
             }
 
         }
     }
- /*   public int getData(int year, String land){
-        int d = 0;
+    public int getData(String year, String land){
+        int d=0;
         for(int i = 0; i < dataList.size(); i++){
-            if( land == dataList.get(i).name && year == dataList.get(i).year){
-
-                if(dataList.get(i).deaths==""){
-                    dataList.get(i).deaths="0";
-                }
-                d = Integer.parseInt(dataList.get(i).deaths); }
+            Data data = dataList.get(i);
+            if( land.equalsIgnoreCase(data.name) && year.equalsIgnoreCase(data.year)){
+                d = Integer.parseInt(data.deaths); }
         }
         return d;
 
-    }*/
+    }
 }

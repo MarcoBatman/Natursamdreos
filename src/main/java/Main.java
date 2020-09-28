@@ -1,18 +1,19 @@
 import processing.core.PApplet;
 
-import java.util.ArrayList;
-
 public class Main extends PApplet {
 
     public static void main(String[] args) {
         PApplet.main("Main");
     }
+
     Broker broker = new Broker();
-    Box box = new Box(this,100,100,400,400);
+    Box boxCountry = new Box(this, 200, 100, 300, 50,1);
+    Box boxYear = new Box(this,200,200,300,50,2);
+
     @Override
     public void settings() {
         super.settings();
-        size(600,600);
+        size(600, 600);
     }
 
     @Override
@@ -20,28 +21,39 @@ public class Main extends PApplet {
 
         super.setup();
         broker.p = this;
-    broker.loadData();
-        for(int i =0;i<broker.dataList.size();i++){
-            println(broker.dataList.get(i).name + " " + broker.dataList.get(i).year + " " +broker.dataList.get(i).deaths);
+        broker.loadData();
+        for (int i = 0; i < broker.dataList.size(); i++) {
+            // println(broker.dataList.get(i).name + " " + broker.dataList.get(i).year + " " +broker.dataList.get(i).deaths);
+            println(broker.dataList.get(i).name);
         }
+
     }
 
     @Override
     public void draw() {
         clear();
-        box.draw();
-        println(box.input);
+        background(255, 255, 0);
+        for(int i = 0;i<broker.dataList.size();i++)
+        broker.dataList.get(i).fixDeaths();
+        boxCountry.draw();
+        boxYear.draw();
+        broker.getData(boxYear.input,boxCountry.input);
+       // println(boxYear.input);
+    System.out.println(broker.getData(boxYear.input,boxCountry.input));
 
     }
 
     @Override
     public void mousePressed() {
-        box.clicked();
+        boxCountry.clicked();
+        boxYear.clicked();
 
     }
 
     @Override
     public void keyTyped() {
-        box.writing(key);
+
+        boxCountry.writing(key);
+        boxYear.writing(key);
     }
 }

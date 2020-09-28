@@ -7,13 +7,17 @@ import java.io.BufferedReader;
 public class Data {
     PApplet p;
 String name;
-int year;
+String year;
 String deaths;
-Data(PApplet p,String n,int y,String d){
+Data(PApplet p,String n,String y,String d){
     name=n;
     year=y;
     deaths=d;
 }
-
+void fixDeaths(){
+    if(deaths.equalsIgnoreCase("")){
+        deaths="0";
+    }
+}
 
 }

@@ -39,7 +39,8 @@ public class Main extends PApplet {
         boxYear.draw();
         broker.getData(boxYear.input,boxCountry.input);
        // println(boxYear.input);
-    System.out.println(broker.getData(boxYear.input,boxCountry.input));
+       
+    text("Deaths: " + broker.getData(boxYear.input,boxCountry.input),200,500);
 
     }
 

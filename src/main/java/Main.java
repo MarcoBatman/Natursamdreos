@@ -5,15 +5,15 @@ public class Main extends PApplet {
     public static void main(String[] args) {
         PApplet.main("Main");
     }
-
+    Graph graph = new Graph(this,10,300);
     Broker broker = new Broker();
-    Box boxCountry = new Box(this, 200, 100, 300, 50,1);
-    Box boxYear = new Box(this,200,200,300,50,2);
+    Box boxCountry = new Box(this, 200, 50, 600, 50,1);
+    Box boxYear = new Box(this,200,110,600,50,2);
 
     @Override
     public void settings() {
         super.settings();
-        size(600, 600);
+        size(1920, 1000);
     }
 
     @Override
@@ -39,8 +39,9 @@ public class Main extends PApplet {
         boxYear.draw();
         broker.getData(boxYear.input,boxCountry.input);
        // println(boxYear.input);
+        graph.draw(broker,boxYear,boxCountry);
        
-    text("Deaths: " + broker.getData(boxYear.input,boxCountry.input),200,500);
+    text("Deaths: " + broker.getData(boxYear.input,boxCountry.input),200,300);
 
     }
 

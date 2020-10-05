@@ -43,6 +43,11 @@ public class Box {
             p.textSize(30);
             p.text("Year",posx-110,posy+40);
             p.text(input,posx+10,posy+40);}
+        if(clicked){
+            p.rect(posx+width+50,posy+height/3,40,height/3);
+            p.triangle(posx+width+50,posy,posx+width+50,posy+height,posx+width+20,posy+height/2);
+        }
+
     }
 
     void writing(char key){

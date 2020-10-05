@@ -40,8 +40,10 @@ public class Main extends PApplet {
         broker.getData(boxYear.input,boxCountry.input);
        // println(boxYear.input);
         graph.draw(broker,boxYear,boxCountry);
-       
-    text("Deaths: " + broker.getData(boxYear.input,boxCountry.input),200,300);
+        graph.animation(broker,boxYear,boxCountry);
+        fill(0);
+        textSize(20);
+    text("Deaths: " + broker.getData(boxYear.input,boxCountry.input),1000,150);
 
     }
 
@@ -57,5 +59,12 @@ public class Main extends PApplet {
 
         boxCountry.writing(key);
         boxYear.writing(key);
+    }
+
+    @Override
+    public void keyReleased() {
+        graph.k=0;
+        graph.j=0;
+        graph.sum=0;
     }
 }

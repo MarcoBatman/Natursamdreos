@@ -23,7 +23,7 @@ public class Main extends PApplet {
         broker.p = this;
         broker.loadData();
         for (int i = 0; i < broker.dataList.size(); i++) {
-            // println(broker.dataList.get(i).name + " " + broker.dataList.get(i).year + " " +broker.dataList.get(i).deaths);
+
             println(broker.dataList.get(i).name);
         }
 
@@ -40,7 +40,6 @@ public class Main extends PApplet {
         broker.getData(boxYear.input,boxCountry.input);
        // println(boxYear.input);
         graph.draw(broker,boxYear,boxCountry);
-        graph.animation(broker,boxYear,boxCountry);
         fill(0);
         textSize(20);
     text("Deaths: " + broker.getData(boxYear.input,boxCountry.input),1000,150);
@@ -63,8 +62,10 @@ public class Main extends PApplet {
 
     @Override
     public void keyReleased() {
+        if(boxCountry.clicked){
         graph.k=0;
         graph.j=0;
         graph.sum=0;
+        }
     }
 }

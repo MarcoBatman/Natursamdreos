@@ -33,7 +33,7 @@ public class Box {
         p.rect(posx,posy,width,height);
         p.fill(0);
         p.textSize(30);
-        p.text("County",posx-110,posy+40);
+        p.text("Country",posx-120,posy+40);
         p.text(input,posx+10,posy+40);}
 
         if(type == 2){

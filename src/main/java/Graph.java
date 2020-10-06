@@ -41,7 +41,7 @@ public class Graph {
             k++;
         }
             p.fill(0);
-        if(k>=144)
+        if(k>=114)
             p.fill(0,0,255);
             p.rect(1800, 900, 20, -sum / 100);
             p.text("Sum /100", 1790, 920);
